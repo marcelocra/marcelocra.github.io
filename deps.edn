@@ -1,4 +1,8 @@
-{:deps    {org.asciidoctor/asciidoctorj {:mvn/version "2.4.0"}}
+{:deps    {org.asciidoctor/asciidoctorj {:mvn/version "2.4.0"}
+           org.asciidoctor/asciidoctorj-pdf {:mvn/version "1.5.3"}
+           ;; To create slides with asciidoctor, enable this one.
+           ;;org.asciidoctor/asciidoctorj-revealjs {:mvn/version "4.0.1"}
+           }
  :aliases {:rebel {:extra-deps {com.bhauman/rebel-readline {:mvn/version "0.1.4"}}
                    :main-opts  ["-m" "rebel-readline.main"]}
            :dev   {:main-opts ["-m" "site.main"]}}}
