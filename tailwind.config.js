@@ -5,4 +5,7 @@ module.exports = {
     './components/**/*.js',
     './components/**/*.jsx',
   ],
+  future: {
+    removeDeprecatedGapUtilities: true,
+  },
 };
