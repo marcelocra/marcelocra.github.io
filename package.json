@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build && next export",
-    "start": "next start"
+    "start": "next start",
+    "out": "cd out; ruby -run -e httpd . -p 9090"
   },
   "dependencies": {
     "date-fns": "^2.16.1",
