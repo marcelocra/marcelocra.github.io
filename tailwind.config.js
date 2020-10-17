@@ -1,11 +1,7 @@
 module.exports = {
-  purge: [
-    './pages/**/*.js',
-    './pages/**/*.jsx',
-    './components/**/*.js',
-    './components/**/*.jsx',
-  ],
   future: {
     removeDeprecatedGapUtilities: true,
+    purgeLayersByDefault: true,
   },
+  purge: ['./components/**/*.{js,ts,jsx,tsx}', './pages/**/*.{js,ts,jsx,tsx}'],
 };

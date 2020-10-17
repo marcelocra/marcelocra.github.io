@@ -1,6 +1,19 @@
-import { parseISO, format } from 'date-fns';
+import { parseISO } from 'date-fns';
+import { useEffect, useState } from 'react';
 
 export default function Date({ dateString }) {
   const date = parseISO(dateString);
-  return <time dateTime={dateString}>{format(date, 'LLLL d, yyyy')}</time>;
+  const [lang, setLang] = useState('pt-BR');
+
+  useEffect(() => {
+    setLang(window.navigator.language);
+  }, []);
+
+  return (
+    <time dateTime={dateString}>
+      {date.toLocaleDateString(lang, {year: 'numeric', month: 'long', day: 'numeric'})}
+    </time>
+  );
 }
+
+// format(date, 'LLLL d, yyyy')

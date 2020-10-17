@@ -2,9 +2,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 import { getSortedPostsData } from '../lib/posts';
-import Date from '../components/date';
 import Layout, { siteTitle } from '../components/layout';
-import utilStyles from '../styles/utils.module.css';
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
@@ -15,36 +13,56 @@ export async function getStaticProps() {
   };
 }
 
+const MyLink = ({url, text, desc}) => {
+  return (
+    <Link href={url}>
+      <a className="p-3 border border-gray-500 rounded hover:bg-gray-300 hover:no-underline">
+        <h3>
+          {text}
+        </h3>
+        <p className="text-gray-500 text-xs">
+          {desc}
+        </p>
+      </a>
+    </Link>
+  );
+}
+
 export default function Home({ allPostsData }) {
   return (
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className={utilStyles.headingMd}>
+
+      <section className="flex justify-center">
         <p>
-          E aí pessoal, blz? Meu nome é Marcelo e sou Engenheiro de Software criando coisas
-          {' '}
-          principalmente em Clojure!
+          Bem vindo!
         </p>
       </section>
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Blog</h2>
-        <ul className={utilStyles.list}>
-          {allPostsData.map(({ id, date, title }) => (
-            <li className={utilStyles.listItem} key={id}>
-              <Link href="/posts/[id]" as={`/posts/${id}`}>
-                <a>{title}</a>
-              </Link>
-              <br />
-              <small className={utilStyles.lightText}>
-                <Date dateString={date} />
-              </small>
-            </li>
-          ))}
-        </ul>
-      </section>
 
+      <section className="grid grid-cols-2 gap-2 mt-2">
+        <MyLink
+          url="/posts"
+          text="Blog"
+          desc="Conteúdos diversos, sobre engenharia de software, programação, ferramentas, produtividade, etc."
+         />
+
+        <MyLink
+          url="https://instagram.com/codeevolution"
+          text="Instagram"
+          desc="Principal canal de comunicação, junto com a lista de email (que ainda será criada)." />
+     
+        <MyLink
+          url="https://youtube.com/channel/UCliE3zhsaWd-P0Sd3xVy3yA"
+          text="YouTube"
+          desc="🚧 Em construção! Assim que tivermos conteúdo no canal, anunciaremos no Instagram." />
+
+        <MyLink
+          url="#"
+          text="Newsletter (lista de email)"
+          desc="🚧 Em construção! Assim que a lista estiver pronta, anunciaremos no Instagram." />
+      </section>
     </Layout>
   );
 }
