@@ -5,3 +5,5 @@ draft: false
 ---
 
 Hello, world!
+
+Primeiro post tem que seguir o clichê! 😜😝

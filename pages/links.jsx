@@ -3,8 +3,6 @@ import Link from 'next/link';
 
 import { useState } from 'react';
 import { getSortedPostsData } from '../lib/posts';
-import Date from '../components/date';
-import utilStyles from '../styles/utils.module.css';
 import Layout, { siteTitle } from '../components/layout';
 
 export async function getStaticProps() {

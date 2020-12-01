@@ -1,0 +1,9 @@
+---
+title: "Let's be mainstream! User focused design in Elm"
+date: "2020-11-30"
+link: "https://www.youtube.com/watch?v=oYk8CKH7OhE"
+linkNumber: 7
+draft: true
+---
+
+O Evan Czaplicki, palestrante nesse vídeo, tem algumas das palestras que eu mais gosto. Ele consegue criar uma história, uma linha de raciocínio que prende. Isso sem nem mencionar que ele é f^%$# né.
