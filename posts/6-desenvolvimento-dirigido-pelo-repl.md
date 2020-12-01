@@ -4,7 +4,7 @@ date: "2020-10-08"
 instagram: "https://www.instagram.com/p/CGFw0LahIK-/"
 link: "https://vimeo.com/230220635"
 linkNumber: 6
-draft: true
+draft: false
 ---
 
 No original, REPL driven development, que é uma prática muito falada na comunidade de Clojure.

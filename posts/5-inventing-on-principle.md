@@ -4,7 +4,7 @@ date: "2020-10-15"
 instagram: "https://www.instagram.com/p/CGXlDrhp0Sy/"
 link: "https://vimeo.com/36579366"
 linkNumber: 5
-draft: true
+draft: false
 ---
 
 Me identifico muito com as crenças que o autor descreve nesse vídeo, de que o fluxo de trabalho de quem desenvolve software deveria ser mais rápido.

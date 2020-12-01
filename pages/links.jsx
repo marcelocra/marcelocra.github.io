@@ -15,13 +15,10 @@ export async function getStaticProps() {
 }
 
 const LinkContent = ({ post }) => (
-  <>
-    Link
-    {' '}
+  <div className="text-xl">
     {post.linkNumber}
-    {' '}
-    {post.draft && <span className="italic text-xs text-gray-500">draft</span>}
-  </>
+    {post.draft && <div className="italic text-xs text-gray-500">draft</div>}
+  </div>
 );
 
 export default function Links({ allPostsData }) {
@@ -40,7 +37,7 @@ export default function Links({ allPostsData }) {
             {' '}
             <span className="text-xs">(externos)</span>
           </p>
-          <p className="text-xs">Clique no botão ao lado para ver os posts relacionados aos links.</p>
+          <p className="text-xs">Clique no botão ao lado para ver os posts relacionados.</p>
         </div>
         <div className="col-span-1 text-right">
           <button
@@ -53,7 +50,7 @@ export default function Links({ allPostsData }) {
         </div>
       </section>
 
-      <section className={`grid m-3 grid-cols-${showDetails ? 2 : 4} gap-2 sm:grid-cols-3`}>
+      <section className={`grid m-3 grid-cols-${showDetails ? 2 : 4} gap-2 sm:grid-cols-3 text-center`}>
         {allPostsData
           .filter((post) => post.link)
           .sort((a, b) => b.linkNumber - a.linkNumber)

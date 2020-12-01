@@ -4,7 +4,7 @@ date: "2020-11-19"
 instagram: "https://www.instagram.com/p/CHySqHvDjzF/"
 link: "https://www.youtube.com/watch?v=OUZZKtypink"
 linkNumber: 14
-draft: true
+draft: false
 ---
 
 "Quando estamos definindo um problema, muitas vezes incluímos na definição a nossa análise [...] ou, pior ainda, incluímos senso comum."

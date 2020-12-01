@@ -4,7 +4,7 @@ date: "2020-10-29"
 instagram: "https://www.instagram.com/p/CG8U6KaBdpX/"
 link: "https://en.wikipedia.org/wiki/Persistent_data_structure#/media/File:Purely_functional_tree_after.svg"
 linkNumber: 11
-draft: true
+draft: false
 ---
 
 Imagem de uma estrutura de dados persistente.
