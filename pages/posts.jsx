@@ -24,15 +24,25 @@ export default function Posts({ allPostsData }) {
 
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <ul className={utilStyles.list}>
-          {allPostsData.map(({ id, date, title }) => (
-            <li className={utilStyles.listItem} key={id}>
+          {allPostsData.map(({
+            id, date, title, instagram,
+          }) => (
+            <li className="my-4" key={id}>
               <Link href="/post/[id]" as={`/post/${id}`}>
                 <a>{title}</a>
               </Link>
-              <br />
-              <small className={utilStyles.lightText}>
+              {instagram && (
+                <div className="text-xs">
+                  Conteúdo auxiliar para
+                  {' '}
+                  <a href={instagram}>o post</a>
+                  {' '}
+                  no Instagram.
+                </div>
+              )}
+              <div className="text-xs text-gray-500">
                 <Date dateString={date} />
-              </small>
+              </div>
             </li>
           ))}
         </ul>

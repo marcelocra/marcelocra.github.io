@@ -14,6 +14,16 @@ export async function getStaticProps() {
   };
 }
 
+const LinkContent = ({ post }) => (
+  <>
+    Link
+    {' '}
+    {post.linkNumber}
+    {' '}
+    {post.draft && <span className="italic text-xs text-gray-500">draft</span>}
+  </>
+);
+
 export default function Links({ allPostsData }) {
   const [showDetails, setShowDetails] = useState(false);
 
@@ -52,9 +62,7 @@ export default function Links({ allPostsData }) {
               {showDetails ? (
                 <div className="border rounded p-2 shadow">
                   <a href={post.link}>
-                    Link
-                    {' '}
-                    {post.linkNumber}
+                    <LinkContent post={post} />
                   </a>
                   <p className="text-xs">{post.title}</p>
                   <Link href="/post/[id]" as={`/post/${post.id}`}>
@@ -63,9 +71,7 @@ export default function Links({ allPostsData }) {
                 </div>
               ) : (
                 <a href={post.link} className="border rounded p-2 shadow hover:bg-gray-300 hover:no-underline">
-                  Link
-                  {' '}
-                  {post.linkNumber}
+                  <LinkContent post={post} />
                 </a>
               )}
             </React.Fragment>

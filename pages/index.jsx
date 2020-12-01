@@ -17,19 +17,6 @@ export default function Home() {
       </section>
 
       <section className="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-2">
-        <Link href="/posts">
-          <a className="p-3 border border-gray-500 rounded hover:bg-gray-300 hover:no-underline">
-            <h3>
-              Blog
-            </h3>
-            <p className="text-gray-500 text-xs">
-              Conteúdos diversos, sobre design de software, programação, ferramentas,
-              {' '}
-              produtividade, etc.
-            </p>
-          </a>
-        </Link>
-
         <a href="https://instagram.com/codeevolution" className="p-3 border border-gray-500 rounded hover:bg-gray-300 hover:no-underline">
           <h3>
             Instagram
@@ -44,13 +31,33 @@ export default function Home() {
             YouTube
           </h3>
           <p className="text-gray-500 text-xs">
-            <span role="img" aria-label="obra">🚧</span>
-            {' '}
-            Em construção! Avisaremos no Instagram qdo tiver pronto, mas se quiser se
-            {' '}
-            inscrever já pode ;).
+            Vídeos completos sobre diversos assuntos.
           </p>
         </a>
+
+        <Link href="/links">
+          <a className="p-3 border border-gray-500 rounded hover:bg-gray-300 hover:no-underline">
+            <h3>
+              Referências para posts do Instagram
+            </h3>
+            <p className="text-gray-500 text-xs">
+              Todas as referências dos meus posts no Instagram.
+            </p>
+          </a>
+        </Link>
+
+        <Link href="/posts">
+          <a className="p-3 border border-gray-500 rounded hover:bg-gray-300 hover:no-underline">
+            <h3>
+              Blog
+            </h3>
+            <p className="text-gray-500 text-xs">
+              Conteúdos diversos, sobre design de software, programação, ferramentas,
+              {' '}
+              produtividade, etc.
+            </p>
+          </a>
+        </Link>
 
         <a className="p-3 border border-gray-500 rounded hover:bg-gray-300 hover:no-underline">
           <h3>
@@ -62,17 +69,6 @@ export default function Home() {
             Em construção! Assim que a lista estiver pronta, avisaremos no Instagram.
           </p>
         </a>
-
-        <Link href="/links">
-          <a className="p-3 border border-gray-500 rounded hover:bg-gray-300 hover:no-underline">
-            <h3>
-              Links do Instagram
-            </h3>
-            <p className="text-gray-500 text-xs">
-              Todas as referências dos meus posts no Instagram.
-            </p>
-          </a>
-        </Link>
       </section>
     </Layout>
   );

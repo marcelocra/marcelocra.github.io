@@ -1,12 +1,12 @@
 import Head from 'next/head';
-import Link from 'next/link';
 
 import Date from '../../components/date';
 import Layout from '../../components/layout';
-import utilStyles from '../../styles/utils.module.css';
 import { getAllPostIds, getPostData } from '../../lib/posts';
 
 export default function Post({ postData }) {
+  const titleStyle = 'text-xl font-bold';
+
   return (
     <Layout>
       <Head>
@@ -15,13 +15,31 @@ export default function Post({ postData }) {
         </title>
       </Head>
       <article>
-        {postData.link
-          ? <a href={postData.link}><h1 className={utilStyles.headingXl}>{postData.title}</h1></a>
-          : <h1 className={utilStyles.headingXl}>{postData.title}</h1>}
-        <div className={utilStyles.lightText}>
+        {postData.instagram && (
+          <div className="mt-3 text-gray-500 leading-tight">
+            Conteúdo auxiliar para
+            {' '}
+            <a href={postData.instagram}>o post</a>
+            {' '}
+            no Instagram.
+          </div>
+        )}
+
+        {postData.link ? (
+          <a href={postData.link}>
+            <h1 className={titleStyle}>{postData.title}</h1>
+          </a>
+        ) : (
+          <h1 className={titleStyle}>
+            {postData.title}
+          </h1>
+        )}
+
+        <div className="text-xs text-gray-500">
           <Date dateString={postData.date} />
         </div>
-        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+
+        <div className="my-4" dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </article>
     </Layout>
   );
