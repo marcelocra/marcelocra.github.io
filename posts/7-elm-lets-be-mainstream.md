@@ -1,6 +1,6 @@
 ---
 title: "Let's be mainstream! User focused design in Elm"
-date: "2020-11-30"
+date: "2020-09-02"
 link: "https://www.youtube.com/watch?v=oYk8CKH7OhE"
 linkNumber: 7
 draft: true

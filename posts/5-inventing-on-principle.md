@@ -1,6 +1,7 @@
 ---
 title: "Inventing on Principle"
 date: "2020-10-15"
+instagram: "https://www.instagram.com/p/CGXlDrhp0Sy/"
 link: "https://vimeo.com/36579366"
 linkNumber: 5
 draft: true

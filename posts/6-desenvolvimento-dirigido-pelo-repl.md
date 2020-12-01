@@ -1,6 +1,7 @@
 ---
 title: "Desenvolvimento dirigido pelo REPL"
 date: "2020-10-08"
+instagram: "https://www.instagram.com/p/CGFw0LahIK-/"
 link: "https://vimeo.com/230220635"
 linkNumber: 6
 draft: true

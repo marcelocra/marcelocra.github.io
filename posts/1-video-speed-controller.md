@@ -1,6 +1,7 @@
 ---
 title: "Video Speed Controller"
-date: "2020-11-30"
+date: "2020-11-21"
+instagram: "https://www.instagram.com/p/CH3S64YDzce/"
 link: "https://chrome.google.com/webstore/detail/video-speed-controller/nffaoalbilbmmfgbnbgppjihopabppdk"
 linkNumber: 1
 draft: false
