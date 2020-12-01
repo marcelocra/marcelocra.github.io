@@ -11,7 +11,7 @@ export default function Date({ dateString }) {
 
   return (
     <time dateTime={dateString}>
-      {date.toLocaleDateString(lang, {year: 'numeric', month: 'long', day: 'numeric'})}
+      {date.toLocaleDateString(lang, { year: 'numeric', month: 'long', day: 'numeric' })}
     </time>
   );
 }

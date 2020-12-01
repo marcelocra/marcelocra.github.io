@@ -1,12 +1,12 @@
-import Head from 'next/head'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
+import Head from 'next/head';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
-import utilStyles from '../styles/utils.module.css'
+import utilStyles from '../styles/utils.module.css';
 
-import styles from './layout.module.css'
+import styles from './layout.module.css';
 
-export const siteTitle = 'Code Evolution'
+export const siteTitle = 'Code Evolution';
 
 export default function Layout({ children, home, ogImage }) {
   const router = useRouter();
@@ -15,16 +15,22 @@ export default function Layout({ children, home, ogImage }) {
     <div className={styles.container}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
-        
+
         <meta property="og:title" content={siteTitle} />
-        <meta property="og:description"
-              content="Conteúdos diversos sobre engenharia de software, programação e ferramentas relacionadas" />
+        <meta
+          property="og:description"
+          content="Conteúdos diversos sobre engenharia de software, programação e ferramentas relacionadas"
+        />
         {ogImage && (
-          <meta property="og:image"
-                content={ogImage} />
+          <meta
+            property="og:image"
+            content={ogImage}
+          />
         )}
-        <meta property="og:url"
-              content="https://codeevolution.dev" />
+        <meta
+          property="og:url"
+          content="https://codeevolution.dev"
+        />
         <meta name="twitter:card" content="summary_large_image" />
 
         <meta property="og:site_name" content={siteTitle} />
@@ -64,11 +70,15 @@ export default function Layout({ children, home, ogImage }) {
       <main>{children}</main>
       {!home && (
         <div className={styles.backToHome}>
-          <button onClick={() => router.back()} className="hover:no-underline text-sm" >
+          <button
+            type="button"
+            onClick={() => router.back()}
+            className="hover:no-underline text-sm"
+          >
             ← Voltar
           </button>
         </div>
       )}
     </div>
-  )
+  );
 }

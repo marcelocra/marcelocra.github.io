@@ -1,5 +1,6 @@
 .container {
   max-width: 36rem;
+  min-width: min-content;
   padding: 0 1rem;
   margin: 3rem auto 6rem;
 }
@@ -23,4 +24,11 @@
 .backToHome {
   margin: 3rem 0 0;
   color: #0070f3;
+}
+
+@media (max-width: 360px) {
+  .headerHomeImage {
+    width: 40%;
+    height: 40%;
+  }
 }

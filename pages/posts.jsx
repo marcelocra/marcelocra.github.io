@@ -1,10 +1,10 @@
 import Head from 'next/head';
 import Link from 'next/link';
 
-import { getSortedPostsData } from '../../lib/posts';
-import Date from '../../components/date';
-import utilStyles from '../../styles/utils.module.css';
-import Layout, { siteTitle } from '../../components/layout';
+import { getSortedPostsData } from '../lib/posts';
+import Date from '../components/date';
+import utilStyles from '../styles/utils.module.css';
+import Layout, { siteTitle } from '../components/layout';
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
@@ -15,7 +15,7 @@ export async function getStaticProps() {
   };
 }
 
-export default function Blog({ allPostsData }) {
+export default function Posts({ allPostsData }) {
   return (
     <Layout>
       <Head>
@@ -26,7 +26,7 @@ export default function Blog({ allPostsData }) {
         <ul className={utilStyles.list}>
           {allPostsData.map(({ id, date, title }) => (
             <li className={utilStyles.listItem} key={id}>
-              <Link href="/posts/[id]" as={`/posts/${id}`}>
+              <Link href="/post/[id]" as={`/post/${id}`}>
                 <a>{title}</a>
               </Link>
               <br />

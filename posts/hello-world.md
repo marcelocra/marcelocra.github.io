@@ -1,6 +1,7 @@
 ---
 title: "Olá, Mundo!"
 date: "2020-10-17"
+draft: false
 ---
 
-Esse é meu primeiro post aqui no blog!
+Hello, world!

@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 
 import Date from '../../components/date';
 import Layout from '../../components/layout';
@@ -14,7 +15,9 @@ export default function Post({ postData }) {
         </title>
       </Head>
       <article>
-        <h1 className={utilStyles.headingXl}>{postData.title}</h1>
+        {postData.link
+          ? <a href={postData.link}><h1 className={utilStyles.headingXl}>{postData.title}</h1></a>
+          : <h1 className={utilStyles.headingXl}>{postData.title}</h1>}
         <div className={utilStyles.lightText}>
           <Date dateString={postData.date} />
         </div>
