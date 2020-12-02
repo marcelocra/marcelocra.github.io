@@ -24,6 +24,33 @@ const LinkContent = ({ post }) => (
 export default function Links({ allPostsData }) {
   const [showDetails, setShowDetails] = useState(false);
 
+  const AllLinks = () => (
+    <>
+      {allPostsData
+        .filter((post) => post.link)
+        .sort((a, b) => b.linkNumber - a.linkNumber)
+        .map((post) => (
+          <React.Fragment key={post.link}>
+            {showDetails ? (
+              <div className="border rounded p-2 shadow">
+                <a href={post.link}>
+                  <LinkContent post={post} />
+                </a>
+                <p className="text-xs">{post.title}</p>
+                <Link href="/post/[id]" as={`/post/${post.id}`}>
+                  <a className="text-xs justify-end">(post)</a>
+                </Link>
+              </div>
+            ) : (
+              <a href={post.link} className="border rounded p-2 shadow hover:bg-gray-300 hover:no-underline">
+                <LinkContent post={post} />
+              </a>
+            )}
+          </React.Fragment>
+        ))}
+    </>
+  );
+
   return (
     <Layout>
       <Head>
@@ -48,30 +75,15 @@ export default function Links({ allPostsData }) {
         </div>
       </section>
 
-      <section className={`grid m-3 grid-cols-${showDetails ? 2 : 4} gap-2 sm:grid-cols-${showDetails ? 4 : 6} text-center`}>
-        {allPostsData
-          .filter((post) => post.link)
-          .sort((a, b) => b.linkNumber - a.linkNumber)
-          .map((post) => (
-            <React.Fragment key={post.link}>
-              {showDetails ? (
-                <div className="border rounded p-2 shadow">
-                  <a href={post.link}>
-                    <LinkContent post={post} />
-                  </a>
-                  <p className="text-xs">{post.title}</p>
-                  <Link href="/post/[id]" as={`/post/${post.id}`}>
-                    <a className="text-xs justify-end">(post)</a>
-                  </Link>
-                </div>
-              ) : (
-                <a href={post.link} className="border rounded p-2 shadow hover:bg-gray-300 hover:no-underline">
-                  <LinkContent post={post} />
-                </a>
-              )}
-            </React.Fragment>
-          ))}
-      </section>
+      {showDetails ? (
+        <section className="m-3 grid grid-cols-2 gap-2 text-center sm:grid-cols-4">
+          <AllLinks />
+        </section>
+      ) : (
+        <section className="m-3 grid grid-cols-4 gap-2 text-center sm:grid-cols-6">
+          <AllLinks />
+        </section>
+      )}
     </Layout>
   );
 }
