@@ -19,7 +19,7 @@ export default function Layout({ children, home, ogImage }) {
         <meta property="og:title" content={siteTitle} />
         <meta
           property="og:description"
-          content="Conteúdos diversos sobre engenharia de software, programação e ferramentas relacionadas"
+          content="Software com menos bugs, mais fácil de manter e estender. Conteúdos diversos sobre design de software, programação e ferramentas relacionadas."
         />
         {ogImage && (
           <meta
