@@ -34,8 +34,6 @@ export default function Links({ allPostsData }) {
         <div className="col-span-2">
           <p>
             Links
-            {' '}
-            <span className="text-xs">(externos)</span>
           </p>
           <p className="text-xs">Clique no botão ao lado para ver os posts relacionados.</p>
         </div>
@@ -50,7 +48,7 @@ export default function Links({ allPostsData }) {
         </div>
       </section>
 
-      <section className={`grid m-3 grid-cols-${showDetails ? 2 : 4} gap-2 sm:grid-cols-3 text-center`}>
+      <section className={`grid m-3 grid-cols-${showDetails ? 2 : 4} gap-2 sm:grid-cols-${showDetails ? 4 : 6} text-center`}>
         {allPostsData
           .filter((post) => post.link)
           .sort((a, b) => b.linkNumber - a.linkNumber)
